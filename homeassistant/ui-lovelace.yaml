@@ -9,3 +9,4 @@ views:
   - !include lovelace/mqtt.yaml
   - !include lovelace/edgex.yaml
   - !include lovelace/computervision.yaml
+  - !include lovelace/openfaas.yaml

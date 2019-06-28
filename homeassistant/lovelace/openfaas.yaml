@@ -1,0 +1,23 @@
+title: OpenFaaS
+icon: mdi:function
+path: openfaas
+cards:
+
+  - type: markdown
+    title: OpenFaaS
+    content: >
+      Serverless Functions Made Simple for Docker and Kubernetes.
+
+  - type: picture-entity
+    title: Camera 02
+    entity: camera.mjpeg_camera_02
+    name: Live
+    show_state: false
+    camera_view: live
+
+  - type: picture-entity
+    title: Camera 02
+    entity: camera.ffmpeg_camera_02
+    name: Function
+    show_state: false
+    camera_view: live
