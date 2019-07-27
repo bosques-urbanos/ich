@@ -1,0 +1,79 @@
+title: Home
+icon: mdi:home-heart
+path: home
+cards:
+
+  - type: markdown
+    title: Welcome to Ich Project!
+    content: >
+      Innovation Labs Network, Universidad Tecnológica de Querétaro
+
+  - type: weather-forecast
+    entity: weather.dark_sky
+
+  - type: iframe
+    url: !secret services_windy_url
+    aspect_ratio: 50%
+
+  - type: picture-elements
+    image: /local/pictures/ui-lovelace/2018072201.jpg
+    elements:
+
+      - type: state-icon
+        entity: sensor.glances_cpu_load
+        style:
+          top: 90%
+          left: 5%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_cpu_temp
+        style:
+          top: 90%
+          left: 15%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_ram_used_percent
+        style:
+          top: 90%
+          left: 25%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_disk_used_percent
+        style:
+          top: 90%
+          left: 35%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_containers_active
+        style:
+          top: 90%
+          left: 75%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_containers_cpu_used
+        style:
+          top: 90%
+          left: 85%
+          "--paper-item-icon-color": white
+
+      - type: state-icon
+        entity: sensor.glances_containers_ram_used
+        style:
+          top: 90%
+          left: 95%
+          "--paper-item-icon-color": white
+
+  - type: picture-entity
+    title: Camera 01
+    entity: camera.mjpeg_camera_01
+    camera_view: live
+
+  - type: picture-entity
+    title: Camera 02
+    entity: camera.mjpeg_camera_02
+    camera_view: live

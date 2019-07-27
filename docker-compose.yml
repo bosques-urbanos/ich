@@ -1,0 +1,154 @@
+version: '3'
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: ich-mosquitto
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    ports:
+      - 1883:1883
+    user: "1000:1000"
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - mosquitto-storage:/mosquitto/config:ro
+      - mosquitto-storage:/mosquitto/data:rw
+      - mosquitto-storage:/mosquitto/log:rw
+
+  glances:
+    image: docker.io/nicolargo/glances
+    container_name: ich-glances
+    restart: on-failure
+    pid: host
+    environment:
+      - TZ=America/Mexico_City
+      - "GLANCES_OPT=-w"
+    network_mode: host
+    ports:
+      - 61208-61208
+      - 61209-61209
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  homeassistant:
+    build:
+      context: ./config/homeassistant/
+      dockerfile: Dockerfile.homeassistant
+    image: homeassistant/home-assistant
+    container_name: ich-homeassistant
+    privileged: true
+    restart: on-failure
+    depends_on:
+      - "influxdb"
+      - "mosquitto"
+      - "glances"
+    environment:
+      - TZ=America/Mexico_City
+      - DISPLAY=:0
+    network_mode: host
+    ports:
+      - 8123:8123
+    devices:
+      - /dev/urandom:/dev/urandom
+      - /dev
+    volumes:
+      - ./homeassistant:/config
+      - ./services:/services
+      - ./media:/config/www/media/
+      - /etc/localtime:/etc/localtime:ro
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority:rw
+
+  influxdb:
+    image: influxdb
+    container_name: ich-influxdb
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+      - INFLUXDB_ADMIN_ENABLED='true'
+      - INFLUXDB_DB="home_assistant"
+    network_mode: host
+    ports:
+      - 8083:8083
+      - 8086:8086
+    volumes:
+      - influxdb-storage:/var/lib/influxdb
+
+  grafana:
+    image: grafana/grafana
+    container_name: ich-grafana
+    restart: on-failure
+    depends_on:
+      - "influxdb"
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    ports:
+      - 3000:3000
+    volumes:
+      - grafana-storage:/var/lib/grafana
+
+  portainer:
+    image: portainer/portainer
+    container_name: ich-portainer
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    ports:
+      - 9000:9000
+    volumes:
+      - portainer-storage:/data:rw
+      - /var/run/docker.sock:/var/run/docker.sock
+
+  nodered:
+    image: nodered/node-red-docker:v8
+    container_name: ich-nodered
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    ports:
+      - 1880:1880
+    depends_on:
+      - "homeassistant"
+    user: root
+    volumes:
+      - nodered-storage:/data
+      - /etc/localtime:/etc/localtime:ro
+
+  plex:
+    image: plexinc/pms-docker
+    container_name: ich-plex
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+      - PLEX_CLAIM=<claimToken>
+    network_mode: host
+    volumes:
+      - ./config/plex/database:/config
+      - ./config/plex/transcode:/transcode
+      - ./media/:/data
+
+  motioneye:
+    image: cahna/motioneye
+    container_name: ich-motioneye
+    restart: on-failure
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    ports:
+      - "8081:8081"
+      - "8765:8765"
+    volumes:
+      - ./config/motioneye/etc:/etc/motioneye
+      - ./media/motioneye/:/var/lib/motioneye
+
+volumes:
+  mosquitto-storage:
+  influxdb-storage:
+  grafana-storage:
+  portainer-storage:
+  nodered-storage:

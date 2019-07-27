@@ -1,0 +1,2 @@
+platform: rest
+resource: !secret rest_resource

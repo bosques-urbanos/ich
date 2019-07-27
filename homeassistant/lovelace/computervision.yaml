@@ -1,0 +1,19 @@
+title: Computer Vision
+icon: mdi:home-city
+path: computervision
+cards:
+
+  - type: markdown
+    title: Computer Vision
+    content: >
+      How computers can be made to gain high-level understanding from digital images or videos.
+
+  - type: picture-entity
+    title: Camera 01
+    entity: camera.ffmpeg_camera_01
+    camera_view: live
+
+  - type: picture-entity
+    title: Camera 02
+    entity: camera.ffmpeg_camera_02
+    camera_view: live

@@ -1,0 +1,4 @@
+platform: mjpeg
+name: mjpeg camera 02
+mjpeg_url: !secret mjpeg_camera_02
+still_image_url: !secret mjpeg_camera_02_still_image

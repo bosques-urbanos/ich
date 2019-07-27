@@ -1,0 +1,6 @@
+platform: generic
+name: generic camera 02
+stream_source: !secret generic_camera_02
+still_image_url: !secret generic_camera_02_still_image
+username: !secret generic_camera_02_username
+password: !secret generic_camera_02_password
