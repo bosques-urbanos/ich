@@ -9,24 +9,20 @@ cards:
        A lightweight messaging protocol for small sensors and mobile devices,
        optimized for high-latency or unreliable networks.
 
-  - type: entities
-    title: Entities MQTT
-    show_header_toggle: false
+  - type: custom:mini-graph-card
+    name: Sensors
+    align_state: center
+    icon: mdi:speedometer
+    show:
+      extrema: true
+      labels: true
+      points: true
     entities:
       - entity: sensor.mqtt_sensor
-        name: Sensors MQTT
-      - entity: binary_sensor.mqtt_binary_sensor
-        name: Binary Sensors MQTT
-      - entity: switch.mqtt_switch
-        name: Switches MQTT
-
-  - type: picture-glance
-    title: Picture Glance MQTT
-    show_header_toggle: false
-    entities:
-      - binary_sensor.mqtt_binary_sensor
-      - switch.mqtt_switch
-    image: /local/pictures/ui-lovelace/2018072201.jpg
+        name: MQTT Sensor
+        color: black
+    hours_to_show: 168
+    points_per_hour: 0.05
 
   - type: picture-entity
     entity: switch.mqtt_switch
