@@ -17,3 +17,13 @@ cards:
     title: Camera 02
     entity: camera.ffmpeg_camera_02
     camera_view: live
+
+  - type: picture-entity
+    title: Camera 01
+    entity: camera.mjpeg_camera_01
+    camera_view: live
+
+  - type: picture-entity
+    title: Camera 02
+    entity: camera.mjpeg_camera_02
+    camera_view: live
