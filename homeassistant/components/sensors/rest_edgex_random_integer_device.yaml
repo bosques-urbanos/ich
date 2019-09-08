@@ -1,0 +1,7 @@
+# https://www.home-assistant.io/components/rest
+
+platform: rest
+name: EdgeX Random Integer Device
+value_template: '{{ value_json.readings.0.value }}'
+resource: !secret rest_edgex_random_integer_device
+force_update: true

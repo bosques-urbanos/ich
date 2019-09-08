@@ -7,5 +7,6 @@ views:
   - !include lovelace/home.yaml
   - !include lovelace/server.yaml
   - !include lovelace/mqtt.yaml
+  - !include lovelace/edgex.yaml
   - !include lovelace/iotplatform.yaml
   - !include lovelace/computervision.yaml

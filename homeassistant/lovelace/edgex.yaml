@@ -1,0 +1,53 @@
+title: EdgeX
+icon: mdi:alpha-x-box-outline
+path: edgex
+cards:
+
+  - type: markdown
+    title:  EdgeX
+    content: >
+       EdgeX Foundry is the world's leading open interoperability
+       platform for the global IoT Edge ecosystem.
+
+  - type: vertical-stack
+    cards:
+
+    - type: markdown
+      content: >
+        ## Device Virtual
+
+    - type: custom:mini-graph-card
+      name: Random Integer Device 
+      align_state: center
+      icon: mdi:speedometer
+      show:
+        extrema: true
+        labels: true
+        points: true
+        fill: true
+      entities:
+        - entity: sensor.edgex_random_integer_device
+          name: Random-Integer-Device
+          color: black
+      hours_to_show: 36
+      points_per_hour: 0.1
+      update_interval: 1
+      animate: true
+
+    - type: custom:mini-graph-card
+      name: Random UnsignedInteger Device
+      align_state: center
+      icon: mdi:speedometer
+      show:
+        extrema: true
+        labels: true
+        points: true
+        fill: true
+      entities:
+        - entity: sensor.edgex_random_unsignedinteger_device
+          name: Random-UnsignedInteger-Device
+          color: black
+      hours_to_show: 36
+      points_per_hour: 0.1
+      update_interval: 1
+      animate: true
