@@ -1,9 +1,0 @@
-title: IoT Platform
-icon: mdi:motion-sensor
-path: iotplatform
-cards:
-
-  - type: markdown
-    title:  IoT Platform
-    content: >
-       The Internet of Things
