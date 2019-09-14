@@ -8,14 +8,44 @@ cards:
     content: >
       Serverless Functions Made Simple for Docker and Kubernetes.
 
-  - type: picture-entity
-    title: Camera 02
-    entity: camera.mjpeg_camera_02
-    name: Live
-    show_state: false
-    camera_view: live
+  - type: vertical-stack
+    cards:
 
-  - type: picture-entity
-    title: Camera 02 OpenFaaS
-    entity: camera.local_file_camera_02_openfaas
-    camera_view: live
+    - type: markdown
+      content: >
+        __Camera 02__
+
+    - type: horizontal-stack
+      cards:
+        - type: picture-entity
+          title: Stream
+          entity: camera.mjpeg_camera_02
+          name: Stream
+          show_state: false
+          camera_view: live
+          tap_action:
+            action: call-service
+            service: script.turn_on
+            service_data:
+              entity_id: script.openfaas_rgb2wb
+
+    - type: horizontal-stack
+      cards:
+        - type: picture-entity
+          title: Snapshot
+          entity: camera.local_file_camera_02_snapshot
+          name: Snapshot
+          show_state: false
+          camera_view: live
+        - type: picture-entity
+          title: OpenFaaS
+          entity: camera.local_file_camera_02_openfaas
+          name: OpenFaaS
+          show_state: false
+          camera_view: live
+          hold_action:
+            action: call-service
+            service: camera.local_file_update_file_path
+            service_data:
+              entity_id: camera.local_file_camera_02_openfaas
+              file_path: '/config/www/media/camera-02/openfaas.jpg'
