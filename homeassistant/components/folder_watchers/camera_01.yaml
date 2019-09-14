@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/components/folder_watcher/
+
+folder: /config/www/media/camera-01/
+patterns:
+  - '*.jpg'
