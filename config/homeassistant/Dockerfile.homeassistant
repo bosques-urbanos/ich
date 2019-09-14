@@ -3,14 +3,12 @@ FROM  homeassistant/home-assistant
 MAINTAINER Abraham Arce "xe1gyq@gmail.com"
 
 ENV TIMEZONE America/Mexico_City
-USER root
 
 RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
 
 RUN curl -sSL https://cli.openfaas.com | sh
-RUN faas-cli list --gateway http://192.168.1.91:8080
 
 ENV TIMEZONE America/Mexico_City
 USER root
