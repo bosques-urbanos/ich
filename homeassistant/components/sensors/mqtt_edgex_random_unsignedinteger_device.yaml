@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: MQTT Random UnsignedInteger Device
+state_topic: "EdgeXExportTopic/RandomUnsignedIntegerDevice"
+value_template: "{{ value_json.readings.0.value }}"
