@@ -56,7 +56,7 @@ services:
     volumes:
       - ./homeassistant:/config
       - ./services:/services
-      - ./media:/config/www/media/
+      - ./media:/config/www/media/:consistent
       - /etc/localtime:/etc/localtime:ro
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority:/root/.Xauthority:rw
