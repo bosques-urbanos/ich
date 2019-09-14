@@ -1,0 +1,8 @@
+alias: Folder Watcher Camera 02
+trigger:
+  - platform: event
+    event_type: folder_watcher
+    event_data:
+      event_type: modified
+action:
+  - delay: '00:00:01'

@@ -1,0 +1,12 @@
+alias: OpenFaaS Camera 02
+condition: []
+trigger:
+  - platform: event
+    event_type: folder_watcher
+    event_data:
+      event_type: created
+action:
+  - service: camera.local_file_update_file_path
+    entity_id: camera.local_file_camera_02_openfaas
+    data_template:
+      file_path: ' {{ trigger.event.data.path }} '
