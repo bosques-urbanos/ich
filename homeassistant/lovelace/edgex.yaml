@@ -14,16 +14,48 @@ cards:
 
     - type: markdown
       content: >
-        ## Device Virtual
+        __Device Virtual Random-UnsignedInteger-Device__
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.edgex_random_unsignedinteger_device
+              name: EdgeX
+          line_color: black
+          line_width: 1
+          font_size: 55
+          hours_to_show: 168
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.mqtt_random_unsignedinteger_device
+              name: MQTT
+          line_color: gray
+          line_width: 1
+          font_size: 55
+          hours_to_show: 168
 
-    - type: custom:mini-graph-card
-      entities:
-        - entity: sensor.edgex_random_integer_device
-          name: Random-Integer-Device
-          color: black
+  - type: vertical-stack
+    cards:
 
-    - type: custom:mini-graph-card
-      entities:
-        - entity: sensor.edgex_random_unsignedinteger_device
-          name: Random-UnsignedInteger-Device
-          color: gray
+    - type: markdown
+      content: >
+        __Device Virtual Random-Integer-Device__
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.edgex_random_integer_device
+              name: EdgeX
+          line_color: black
+          line_width: 1
+          font_size: 55
+          hours_to_show: 168
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.mqtt_random_integer_device
+              name: MQTT
+          line_color: gray
+          line_width: 1
+          font_size: 55
+          hours_to_show: 168
+
