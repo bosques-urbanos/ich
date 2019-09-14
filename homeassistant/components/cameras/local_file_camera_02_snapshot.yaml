@@ -1,0 +1,5 @@
+# https://www.home-assistant.io/components/local_file/
+
+platform: local_file
+name: Local File Camera 02 Snapshot
+file_path: /config/www/media/camera-02/snapshot.jpg
