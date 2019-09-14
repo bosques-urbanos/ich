@@ -16,8 +16,6 @@ cards:
     camera_view: live
 
   - type: picture-entity
-    title: Camera 02
-    entity: camera.ffmpeg_camera_02
-    name: Function
-    show_state: false
+    title: Camera 02 OpenFaaS
+    entity: camera.local_file_camera_02_openfaas
     camera_view: live
