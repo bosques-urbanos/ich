@@ -18,6 +18,8 @@ homeassistant:
 
   whitelist_external_dirs:
     - '/config/www/media/'
+    - '/config/www/media/camera-01/'
+    - '/config/www/media/camera-02/'
 
   # Load packages
   packages: !include_dir_named components/packages
