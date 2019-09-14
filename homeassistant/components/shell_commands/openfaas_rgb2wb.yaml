@@ -1,0 +1,3 @@
+# https://www.home-assistant.io/components/shell_command/
+
+openfaas_rgb2wb: cat /config/www/media/camera-02/snapshot.jpg | faas-cli invoke rgb2wb --gateway http://192.168.1.91:8080 > /config/www/media/camera-02/openfaas.jpg
