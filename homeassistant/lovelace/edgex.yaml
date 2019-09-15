@@ -59,3 +59,29 @@ cards:
           font_size: 55
           hours_to_show: 168
 
+  - type: vertical-stack
+    cards:
+
+    - type: markdown
+      content: >
+        __Ich Use Cases Bravo__
+    - type: horizontal-stack
+      cards:
+        - type: custom:mini-graph-card
+          entities:
+            - entity: sensor.mqtt_ich_use_cases_bravo_temperature
+              name: Temperature
+          show:
+            labels: true
+          color_thresholds:
+            - value: 30
+              color: "#f39c12"
+            - value: 35
+              color: "#d35400"
+            - value: 40
+              color: "#c0392b"
+          #line_width: 1
+          #font_size: 55
+          hours_to_show: 1
+          update_interval: 1
+          animate: true
