@@ -8,16 +8,23 @@ cards:
     content: >
       How computers can be made to gain high-level understanding from digital images or videos.
 
-  - type: picture-entity
-    title: Camera 01
-    entity: camera.mjpeg_camera_01
-    name: Live
-    show_state: false
-    camera_view: live
+  - type: vertical-stack
+    cards:
 
-  - type: picture-entity
-    title: Camera 01
-    entity: camera.ffmpeg_camera_01
-    name: Service
-    show_state: false
-    camera_view: live
+    - type: markdown
+      content: >
+        __Camera 01__
+
+    - type: picture-entity
+      title: Stream
+      entity: camera.mjpeg_camera_01
+      name: Stream
+      show_state: false
+      camera_view: live
+
+    - type: picture-entity
+      title: Inference
+      entity: camera.ffmpeg_camera_01
+      name: Inference
+      show_state: false
+      camera_view: live

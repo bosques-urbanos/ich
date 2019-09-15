@@ -9,38 +9,42 @@ cards:
        A lightweight messaging protocol for small sensors and mobile devices,
        optimized for high-latency or unreliable networks.
 
-  - type: custom:mini-graph-card
-    name: Sensors
-    align_state: center
-    icon: mdi:speedometer
-    show:
-      extrema: true
-      labels: true
-      points: true
-      fill: true
-    entities:
-      - entity: sensor.mqtt_sensor
-        name: MQTT Sensor
-        color: black
-    hours_to_show: 36
-    points_per_hour: 0.1
-    update_interval: 1
-    animate: true
+  - type: vertical-stack
+    cards:
 
-  - type: picture-entity
-    name: MQTT Switch
-    entity: switch.mqtt_switch
-    state_image:
-      "on": /local/pictures/ui-lovelace/2018073001.jpg
-      "off": /local/pictures/ui-lovelace/2018073002.jpg
+    - type: custom:mini-graph-card
+      name: Sensors
+      align_state: center
+      icon: mdi:speedometer
+      show:
+        extrema: true
+        labels: true
+        points: true
+        fill: true
+      entities:
+        - entity: sensor.mqtt_sensor
+          name: MQTT Sensor
+          color: black
+      hours_to_show: 36
+      points_per_hour: 0.1
+      update_interval: 1
+      animate: true
 
-  - type: picture-entity
-    title: MQTT Binary Sensor
-    show_header_toggle: false
-    entities:
-      - binary_sensor.mqtt_binary_sensor
-    image: /local/pictures/ui-lovelace/2018073001.jpg
-    state_image:
-      "on": /local/pictures/ui-lovelace/2018072901.jpg
-      "off": /local/pictures/ui-lovelace/2018072902.jpg
-    entity: binary_sensor.mqtt_binary_sensor
+    - type: horizontal-stack
+      cards:
+        - type: picture-entity
+          name: MQTT Switch
+          entity: switch.mqtt_switch
+          state_image:
+            "on": /local/pictures/ui-lovelace/2018073001.jpg
+            "off": /local/pictures/ui-lovelace/2018073002.jpg
+        - type: picture-entity
+          title: MQTT Binary Sensor
+          show_header_toggle: false
+          entities:
+            - binary_sensor.mqtt_binary_sensor
+          image: /local/pictures/ui-lovelace/2018073001.jpg
+          state_image:
+            "on": /local/pictures/ui-lovelace/2018072901.jpg
+            "off": /local/pictures/ui-lovelace/2018072902.jpg
+          entity: binary_sensor.mqtt_binary_sensor
