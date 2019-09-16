@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     cpio \
     lsb-release \
     python-pip \
-    pciutils
+    pciutils \
     vim && \
     rm -rf /var/lib/apt/lists/*
 
