@@ -23,7 +23,7 @@ cards:
         fill: true
       entities:
         - entity: sensor.mqtt_sensor
-          name: MQTT Sensor
+          name: Sensor
           color: black
       hours_to_show: 36
       points_per_hour: 0.1
@@ -33,13 +33,13 @@ cards:
     - type: horizontal-stack
       cards:
         - type: picture-entity
-          name: MQTT Switch
+          name: Switch
           entity: switch.mqtt_switch
           state_image:
             "on": /local/pictures/ui-lovelace/2018073001.jpg
             "off": /local/pictures/ui-lovelace/2018073002.jpg
         - type: picture-entity
-          title: MQTT Binary Sensor
+          title: Binary Sensor
           show_header_toggle: false
           entities:
             - binary_sensor.mqtt_binary_sensor
