@@ -1,5 +1,6 @@
 # https://www.home-assistant.io/components/switch.mqtt/
 
 platform: mqtt
+name: MQTT Demo
 state_topic: "switches/mqtt/state_topic"
 command_topic: "switches/mqtt/command_topic"

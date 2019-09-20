@@ -13,7 +13,7 @@ cards:
     cards:
 
     - type: custom:mini-graph-card
-      name: Sensors
+      name: Sensor
       align_state: center
       icon: mdi:speedometer
       show:
@@ -22,7 +22,7 @@ cards:
         points: true
         fill: true
       entities:
-        - entity: sensor.mqtt_sensor
+        - entity: sensor.mqtt_demo
           name: Sensor
           color: black
       hours_to_show: 36
@@ -34,17 +34,17 @@ cards:
       cards:
         - type: picture-entity
           name: Switch
-          entity: switch.mqtt_switch
+          entity: switch.mqtt_demo
           state_image:
             "on": /local/pictures/ui-lovelace/2018073001.jpg
             "off": /local/pictures/ui-lovelace/2018073002.jpg
         - type: picture-entity
-          title: Binary Sensor
+          name: Binary Sensor
           show_header_toggle: false
           entities:
-            - binary_sensor.mqtt_binary_sensor
+            - binary_sensor.mqtt_demo
           image: /local/pictures/ui-lovelace/2018073001.jpg
           state_image:
             "on": /local/pictures/ui-lovelace/2018072901.jpg
             "off": /local/pictures/ui-lovelace/2018072902.jpg
-          entity: binary_sensor.mqtt_binary_sensor
+          entity: binary_sensor.mqtt_demo
