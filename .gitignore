@@ -22,3 +22,6 @@ homeassistant/home-assistant_v2.db-wal
 homeassistant/known_devices.yaml
 homeassistant/secrets.yaml
 homeassistant/www/
+
+# Iikim
+iikim/
