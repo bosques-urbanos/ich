@@ -10,3 +10,4 @@ views:
   - !include lovelace/computervision.yaml
   - !include lovelace/openfaas.yaml
   - !include lovelace/edgex.yaml
+  - !include lovelace/traffic.yaml
