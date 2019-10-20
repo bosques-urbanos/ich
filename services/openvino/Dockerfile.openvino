@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM xe1gyq/opencv
 
 MAINTAINER Abraham Arce "xe1gyq@gmail.com"
 
@@ -38,10 +38,6 @@ RUN cd /tmp/ && \
      make -j4 && \
      make install && \
      rm -rf /tmp/*
-
-RUN groupadd user && \
-    useradd -g user -s /bin/bash -d /home/user -m user && \
-    echo "user ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 WORKDIR /home/user
 RUN chown user /home/user
