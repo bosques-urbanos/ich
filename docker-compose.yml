@@ -146,6 +146,16 @@ services:
       - ./config/motioneye/etc:/etc/motioneye
       - ./media/motioneye/:/var/lib/motioneye
 
+  ha-dockermon:
+    image: philhawthorne/ha-dockermon
+    container_name: ich-ha-dockermon
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./config/ha-dockermon/:/config
+    ports:
+      - 8126:8126
+
 volumes:
   mosquitto-storage:
   influxdb-storage:
