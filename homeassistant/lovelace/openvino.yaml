@@ -1,5 +1,5 @@
 title: OpenVINO
-icon: mdi:cctv
+icon: mdi:eye
 path: openvino
 cards:
 
@@ -16,4 +16,6 @@ cards:
       show_header_toggle: false
       entities:
         - entity: switch.application_restricted_zone_notifier_cpp_demo
+          name: Restricted Zone Notifier
         - entity: switch.application_shopper_gaze_monitor_cpp_demo
+          name: Shopper Gaze Monitor
