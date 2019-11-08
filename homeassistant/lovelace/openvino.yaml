@@ -15,4 +15,5 @@ cards:
       title: Demos
       show_header_toggle: false
       entities:
+        - entity: switch.application_restricted_zone_notifier_cpp_demo
         - entity: switch.application_shopper_gaze_monitor_cpp_demo
