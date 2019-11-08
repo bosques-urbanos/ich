@@ -1,0 +1,18 @@
+title: OpenVINO
+icon: mdi:cctv
+path: openvino
+cards:
+
+  - type: markdown
+    title: OpenVINO
+    content: >
+      Develop Multiplatform Computer Vision Solutions
+
+  - type: vertical-stack
+    cards:
+
+    - type: entities
+      title: Demos
+      show_header_toggle: false
+      entities:
+        - entity: switch.application_shopper_gaze_monitor_cpp_demo
