@@ -146,7 +146,7 @@ services:
       - ./config/motioneye/etc:/etc/motioneye
       - ./media/motioneye/:/var/lib/motioneye
 
-  ha-dockermon:
+  hadockermon:
     image: philhawthorne/ha-dockermon
     container_name: ich-ha-dockermon
     restart: always
