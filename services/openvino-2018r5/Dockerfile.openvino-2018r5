@@ -43,13 +43,16 @@ WORKDIR /home/user
 RUN chown user /home/user
 USER user
 
-ADD --chown=1000:1000 ${OPENVINO} /home/user/${OPENVINO}
-RUN /bin/bash -c 'chmod +x /home/user/${OPENVINO}'
+RUN wget -O /tmp/${OPENVINO}.tgz http://registrationcenter-download.intel.com/akdlm/irc_nas/15078/${OPENVINO}.tgz
 
-RUN cd ${OPENVINO}/ && \
+RUN cd /tmp/ && \
+    tar xvf ${OPENVINO}.tgz && \
+    cd ${OPENVINO} && \
     sudo ./install_cv_sdk_dependencies.sh && \
     sed -i 's/decline/accept/g' silent.cfg && \
-    sudo ./install.sh --silent silent.cfg
+    sudo ./install.sh --silent silent.cfg && \
+    cd ../ && \
+    rm -r ${OPENVINO}.tgz ${OPENVINO}/
 
 RUN sudo usermod -a -G video user && \
     sudo usermod -a -G user user
