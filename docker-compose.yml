@@ -44,6 +44,7 @@ services:
       - "influxdb"
       - "mosquitto"
       - "glances"
+      - "doods"
     environment:
       - TZ=America/Mexico_City
       - DISPLAY=:0
@@ -156,6 +157,14 @@ services:
       - ./config/ha-dockermon/:/config
     ports:
       - 8126:8126
+
+  doods:
+    image: snowzach/doods
+    container_name: bacab-home-doods
+    restart: always
+    network_mode: host
+    ports:
+      - 8080:8080
 
 volumes:
   mosquitto-storage:
