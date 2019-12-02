@@ -1,0 +1,4 @@
+# https://www.home-assistant.io/integrations/glances/
+
+glances:
+  - host: !secret services_glances_api
