@@ -8,14 +8,37 @@ cards:
     content: >
       Develop Multiplatform Computer Vision Solutions
 
-  - type: vertical-stack
-    cards:
+  - type: entities
+    title: OpenVINO
+    show_header_toggle: false
+    entities:
 
-    - type: entities
-      title: Demos
-      show_header_toggle: false
-      entities:
-        - entity: switch.application_restricted_zone_notifier_cpp_demo
-          name: Restricted Zone Notifier
-        - entity: switch.application_shopper_gaze_monitor_cpp_demo
-          name: Shopper Gaze Monitor
+      - type: section
+        label: Restricted Zone Notifier CPP
+
+      - entity: switch.application_restricted_zone_notifier_cpp
+        name: Switch
+      - entity: binary_sensor.application_restricted_zone_notifier_cpp
+        name: Sensor
+
+      - type: section
+        label: Shopper Gaze Monitor CPP
+
+      - entity: switch.application_shopper_gaze_monitor_cpp
+        name: Switch
+      - entity: sensor.application_shopper_gaze_monitor_cpp_shoppers
+        name: Shoppers
+      - entity: sensor.application_shopper_gaze_monitor_cpp_lookers
+        name: Lookers
+
+      - type: section
+        label: Shopper Mood Monitor CPP
+
+      - entity: switch.application_shopper_mood_monitor_cpp
+        name: Switch
+
+      - type: section
+        label: Parking Lot Counter CPP
+
+      - entity: switch.application_parking_lot_counter_cpp
+        name: Switch
