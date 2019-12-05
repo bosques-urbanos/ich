@@ -163,7 +163,7 @@ services:
 
   doods:
     image: snowzach/doods
-    container_name: bacab-home-doods
+    container_name: ich-doods
     restart: always
     network_mode: host
     ports:
