@@ -10,5 +10,8 @@ RUN apk add --update \
 
 RUN curl -sSL https://cli.openfaas.com | sh
 
+COPY requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
 ENV TIMEZONE America/Mexico_City
 USER root

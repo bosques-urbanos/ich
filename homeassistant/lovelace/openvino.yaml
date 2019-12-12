@@ -22,6 +22,14 @@ cards:
         name: Sensor
 
       - type: section
+        label: Restricted Zone Notifier Python
+
+      - entity: switch.application_restricted_zone_notifier_python
+        name: Switch
+      - entity: binary_sensor.application_restricted_zone_notifier_python
+        name: Sensor
+
+      - type: section
         label: Shopper Gaze Monitor CPP
 
       - entity: switch.application_shopper_gaze_monitor_cpp
