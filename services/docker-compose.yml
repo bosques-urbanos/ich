@@ -56,3 +56,18 @@ services:
     network_mode: host
     devices:
       - /dev
+
+  filehash:
+    build:
+      context: ./filehash/
+      dockerfile: Dockerfile.filehash
+    image: xe1gyq/filehash
+    container_name: ich-filehash
+    privileged: true
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    devices:
+      - /dev
+    volumes:
+      - ../media/:/media/
