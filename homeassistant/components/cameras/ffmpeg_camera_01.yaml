@@ -3,3 +3,5 @@
 platform: ffmpeg
 name: ffmpeg camera 01
 input: !secret ffmpeg_camera_01
+extra_arguments: -f rawvideo
+#extra_arguments: -f rawvideo -pixel_format yuv420p -video_size 320x240 -framerate 10
