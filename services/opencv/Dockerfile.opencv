@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER Alfredo Reyes "reyes-fred@hotmail.com"
 
-ARG OPENCV_VERSION=4.0.1
+ARG OPENCV_VERSION=4.2.0
 
 ENV TIMEZONE America/Mexico_City
 ENV USER root
@@ -26,7 +26,8 @@ RUN apt-get update && \
     apt install libjasper1 libjasper-dev && \
     rm -rf /var/lib/apt/lists/*
 
-RUN apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
     gstreamer1.0-plugins-bad \
@@ -79,13 +80,11 @@ RUN  cmake \
     -D BUILD_opencv_python3=YES ..
 
 RUN make -j$(nproc) && make install && ldconfig
-RUN ls /usr/local/lib/ && \
-    ln -s /usr/local/lib/python3.5/site-packages/cv2.cpython-35m-x86_64-linux-gnu.so \
-    /usr/local/lib/python3.5/dist-packages/cv2.so
+RUN ln -s /usr/local/lib/python3.6/site-packages/cv2.cpython-35m-x86_64-linux-gnu.so \
+    /usr/local/lib/python3.6/dist-packages/cv2.so
 RUN pip install imutils
 
 RUN rm -rf /opencv-$OPENCV_VERSION /opencv_contrib-$OPENCV_VERSION
-RUN ls /
 
 RUN groupadd user && \
     useradd -g user -s /bin/bash -d /home/user -m user && \

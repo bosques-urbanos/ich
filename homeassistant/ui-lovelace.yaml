@@ -10,6 +10,7 @@ views:
   - !include lovelace/esphome.yaml
   - !include lovelace/computervision.yaml
   - !include lovelace/openvino.yaml
+  - !include lovelace/gva.yaml
   - !include lovelace/openfaas.yaml
   - !include lovelace/edgex.yaml
   - !include lovelace/traffic.yaml

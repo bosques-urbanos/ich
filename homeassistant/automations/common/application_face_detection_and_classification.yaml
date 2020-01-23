@@ -1,0 +1,16 @@
+alias: Application Face Detection and Classification
+initial_state: true
+trigger:
+  platform: state
+  entity_id: binary_sensor.application_face_detection_and_classification
+  from: 'off'
+  to: 'on'
+action:
+  - service: camera.snapshot
+    data:
+      entity_id: camera.mjpeg_camera_01
+      filename: '/config/www/media/applications/fdac_{{ now().strftime("%Y%m%d-%H%M%S") }}.jpg'
+  - service: camera.record
+    data:
+      entity_id: camera.mjpeg_camera_01
+      filename: '/config/www/media/applications/fdac_{{ now().strftime("%Y%m%d-%H%M%S") }}.mp4'

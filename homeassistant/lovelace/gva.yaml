@@ -1,0 +1,65 @@
+title: GVA
+icon: mdi:google-analytics
+path: gva
+cards:
+
+  - type: markdown
+    title: Gstreamer Video Analytics
+    content: >
+      GStreamer Video Analytics Plugin, multiple GStreamer elements
+      (detection, classification, identification).
+
+  - type: entities
+    title: Face Detection and Classification
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: Upstream
+
+      - entity: switch.application_face_detection_and_classification
+        name: Switch
+      - entity: binary_sensor.application_face_detection_and_classification
+        name: Sensor
+
+      - type: section
+        label: MeRS
+
+      - entity: switch.application_mers_face_detection_and_classification
+        name: Switch
+      - entity: binary_sensor.application_mers_face_detection_and_classification
+        name: Sensor
+
+  - type: entities
+    title: Face Detection Multichannel
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: Upstream
+
+      - entity: switch.application_face_detection_multichannel
+        name: Switch
+      - entity: binary_sensor.application_face_detection_multichannel
+        name: Sensor
+
+      - type: section
+        label: MeRS
+
+      - entity: switch.application_mers_face_detection_multichannel
+        name: Switch
+      - entity: binary_sensor.application_mers_face_detection_multichannel
+        name: Sensor
+
+  - type: entities
+    title: Vehicle Detection Publish MQTT Timestamp
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: MeRS
+
+      - entity: switch.application_mers_vehicle_detection_publish_mqtt
+        name: Switch
+      - entity: sensor.application_mers_vehicle_detection_publish_mqtt_timestamp
+        name: Sensor
