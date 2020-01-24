@@ -23,6 +23,24 @@ cards:
         name: Sensor
 
       - type: section
+        label: Upstream Publish MQTT
+
+      - entity: switch.application_face_detection_and_classification_publish_mqtt
+        name: Switch
+      - entity: sensor.application_face_detection_and_classification_publish_mqtt_gender
+        name: Gender
+      - entity: binary_sensor.application_face_detection_and_classification_publish_mqtt_female
+        name: _Female
+      - entity: binary_sensor.application_face_detection_and_classification_publish_mqtt_male
+        name: _Male
+      - entity: sensor.application_face_detection_and_classification_publish_mqtt_age
+        name: Age
+      - entity: sensor.application_face_detection_and_classification_publish_mqtt_emotion
+        name: Emotion
+      - entity: sensor.application_face_detection_and_classification_publish_mqtt_timestamp_last_changed
+        name: Last Changed
+
+      - type: section
         label: MeRS
 
       - entity: switch.application_mers_face_detection_and_classification

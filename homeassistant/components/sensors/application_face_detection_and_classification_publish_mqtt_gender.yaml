@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: Application Face Detection and Classification Publish MQTT Gender
+state_topic: "application/fdacpm/demo"
+value_template: '{{ value_json.objects[0].gender.label }}'
