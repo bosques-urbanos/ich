@@ -1,0 +1,25 @@
+substitutions:
+  main_name: "ESPHome Ultrasonic Sensor"
+
+esphome:
+  name: "esphomeultrasonicsensor"
+  platform: ESP8266
+  board: nodemcuv2
+
+<<: !include common/main.yaml
+
+binary_sensor:
+  - !include common/binary_sensors/status.yaml
+
+sensor:
+  - !include common/sensors/uptime.yaml
+  - !include common/sensors/wifi-signal.yaml
+  - platform: ultrasonic
+    trigger_pin: D1
+    echo_pin: D2
+    update_interval: 1s
+    name: "ESPHome Ultrasonic Sensor"
+
+text_sensor:
+  - !include common/text_sensors/version.yaml
+  - !include common/text_sensors/wifi-info.yaml
