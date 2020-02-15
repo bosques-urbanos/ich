@@ -1,0 +1,11 @@
+# https://www.home-assistant.io/integrations/min_max
+
+platform: min_max
+name: Home Mean Temperature
+entity_ids:
+  - sensor.master_bedroom_temperature
+  - sensor.bathroom_temperature
+  - sensor.guest_bedroom_temperature
+  - sensor.kitchen_temperature
+  - sensor.living_room_temperature
+type: mean
