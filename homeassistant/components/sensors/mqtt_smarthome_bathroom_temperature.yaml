@@ -4,3 +4,4 @@ platform: mqtt
 name: Bathroom Temperature
 state_topic: "smarthome/bathroom/temperature/state_topic"
 unit_of_measurement: '°C'
+device_class: temperature

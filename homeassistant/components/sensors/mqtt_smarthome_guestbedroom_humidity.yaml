@@ -4,3 +4,5 @@ platform: mqtt
 name: Guest Bedroom Humidity
 state_topic: "smarthome/guestbedroom/humidity/state_topic"
 unit_of_measurement: '%'
+icon: mdi:water-percent
+device_class: humidity

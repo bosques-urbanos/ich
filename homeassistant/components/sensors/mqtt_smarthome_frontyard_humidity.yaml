@@ -4,3 +4,4 @@ platform: mqtt
 name: Frontyard Humidity
 state_topic: "smarthome/frontyard/humidity/state_topic"
 unit_of_measurement: '%'
+icon: mdi:water-percent

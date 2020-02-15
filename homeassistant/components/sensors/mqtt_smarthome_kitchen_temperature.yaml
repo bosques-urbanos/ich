@@ -4,3 +4,4 @@ platform: mqtt
 name: Kitchen Temperature
 state_topic: "smarthome/kitchen/temperature/state_topic"
 unit_of_measurement: '°C'
+device_class: temperature
