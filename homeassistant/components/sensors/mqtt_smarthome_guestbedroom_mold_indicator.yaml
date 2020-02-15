@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/mold_indicator/
+
+platform: mold_indicator
+name: Guest Bedroom Mold Indicator
+indoor_temp_sensor: sensor.guest_bedroom_temperature
+indoor_humidity_sensor: sensor.guest_bedroom_humidity
+outdoor_temp_sensor: sensor.frontyard_temperature
+calibration_factor: 2.0

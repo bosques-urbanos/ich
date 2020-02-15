@@ -12,3 +12,5 @@ cards:
         name: Temperature
       - entity: sensor.guest_bedroom_humidity
         name: Humidity
+      - entity: sensor.guest_bedroom_mold_indicator
+        name: Mold Indicator

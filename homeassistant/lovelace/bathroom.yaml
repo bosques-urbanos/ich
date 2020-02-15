@@ -12,3 +12,5 @@ cards:
         name: Temperature
       - entity: sensor.bathroom_humidity
         name: Humidity
+      - entity: sensor.bathroom_mold_indicator
+        name: Mold Indicator
