@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/binary_sensor.mqtt/
+
+platform: mqtt
+name: Frontyard Motion
+state_topic: "smarthome/frontyard/motion/state_topic"
+device_class: motion

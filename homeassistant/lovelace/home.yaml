@@ -15,9 +15,12 @@ cards:
       [Wikipedia](https://en.wikipedia.org/wiki/Smart_home_technology)
 
   - type: entities
-    title: Environment
+    title: Summary
     show_header_toggle: false
     entities:
+
+      - type: section
+        label: Environment      
 
       - entity: sensor.home_mean_temperature
         name: Home Mean Temperature
@@ -25,3 +28,11 @@ cards:
         name: Home Mean Humidity
       - entity: sensor.home_mean_battery
         name: Home Mean Battery
+
+      - type: section
+        label: Motion On Today
+
+      - entity: binary_sensor.house_motion_on
+        name: Now
+      - entity: sensor.house_motion_on_today
+        name: Hours

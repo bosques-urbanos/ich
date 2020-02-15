@@ -3,6 +3,14 @@ icon: mdi:fridge-outline
 path: kitchen
 cards:
 
+  - type: glance
+    show_header_toggle: false
+    show_state: false
+    entities:
+
+      - entity: binary_sensor.kitchen_motion
+        name: Motion
+
   - type: entities
     title: Environment
     show_header_toggle: false
@@ -16,3 +24,14 @@ cards:
         name: Mold Indicator
       - entity: sensor.kitchen_battery
         name: Battery
+
+  - type: entities
+    title: Statistics
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: Motion
+
+      - entity: sensor.kitchen_motion_on_today
+        name: On Today

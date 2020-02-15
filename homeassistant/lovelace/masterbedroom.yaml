@@ -3,6 +3,14 @@ icon: mdi:bed-empty
 path: masterbedroom
 cards:
 
+  - type: glance
+    show_header_toggle: false
+    show_state: false
+    entities:
+
+      - entity: binary_sensor.master_bedroom_motion
+        name: Motion
+
   - type: entities
     title: Environment
     show_header_toggle: false
@@ -16,3 +24,14 @@ cards:
         name: Mold Indicator
       - entity: sensor.master_bedroom_battery
         name: Battery
+
+  - type: entities
+    title: Statistics
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: Motion
+
+      - entity: sensor.master_bedroom_motion_on_today
+        name: On Today
