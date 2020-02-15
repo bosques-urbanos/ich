@@ -20,6 +20,13 @@ cards:
     entities:
 
       - type: section
+        label: Medicine
+
+      - entity: binary_sensor.kitchen_medicine_cabinet
+        name: Cabinet
+        secondary_info: last-changed
+
+      - type: section
         label: Environment      
 
       - entity: sensor.home_mean_temperature
