@@ -10,6 +10,8 @@ cards:
 
       - entity: binary_sensor.frontyard_motion
         name: Motion
+      - entity: binary_sensor.frontyard_door
+        name: Door
 
   - type: entities
     title: Environment

@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/binary_sensor.mqtt/
+
+platform: mqtt
+name: Bathroom Door
+state_topic: "smarthome/bathroom/door/state_topic"
+device_class: door

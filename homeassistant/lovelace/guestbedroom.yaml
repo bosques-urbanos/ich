@@ -10,6 +10,8 @@ cards:
 
       - entity: binary_sensor.guest_bedroom_motion
         name: Motion
+      - entity: binary_sensor.guest_bedroom_door
+        name: Door
 
   - type: entities
     title: Environment
