@@ -10,3 +10,5 @@ cards:
 
       - entity: sensor.bathroom_temperature
         name: Temperature
+      - entity: sensor.bathroom_humidity
+        name: Humidity

@@ -10,3 +10,5 @@ cards:
 
       - entity: sensor.backyard_temperature
         name: Temperature
+      - entity: sensor.backyard_humidity
+        name: Humidity

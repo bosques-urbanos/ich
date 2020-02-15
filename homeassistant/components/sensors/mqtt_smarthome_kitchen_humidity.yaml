@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: Kitchen Humidity
+state_topic: "smarthome/kitchen/humidity/state_topic"
+unit_of_measurement: '%'

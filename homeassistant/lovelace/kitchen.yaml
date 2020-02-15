@@ -10,3 +10,5 @@ cards:
 
       - entity: sensor.kitchen_temperature
         name: Temperature
+      - entity: sensor.kitchen_humidity
+        name: Humidity
