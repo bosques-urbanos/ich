@@ -1,0 +1,12 @@
+title: Bathroom
+icon: mdi:paper-roll
+path: bathroom
+cards:
+
+  - type: entities
+    title: Environment
+    show_header_toggle: false
+    entities:
+
+      - entity: sensor.bathroom_temperature
+        name: Temperature

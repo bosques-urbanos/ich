@@ -1,0 +1,12 @@
+title: Backyard
+icon: mdi:flower
+path: backyard
+cards:
+
+  - type: entities
+    title: Environment
+    show_header_toggle: false
+    entities:
+
+      - entity: sensor.backyard_temperature
+        name: Temperature

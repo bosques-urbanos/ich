@@ -1,0 +1,12 @@
+title: Guest Bedroom
+icon: mdi:bag-checked
+path: guestbedroom
+cards:
+
+  - type: entities
+    title: Environment
+    show_header_toggle: false
+    entities:
+
+      - entity: sensor.guest_bedroom_temperature
+        name: Temperature

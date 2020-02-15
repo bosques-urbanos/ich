@@ -1,12 +1,7 @@
-title: Computer Vision
+title: Cameras
 icon: mdi:cctv
-path: computervision
+path: cameras
 cards:
-
-  - type: markdown
-    title: Computer Vision
-    content: >
-      How computers can be made to gain high-level understanding from digital images or videos.
 
   - type: picture-entity
     title: MJPEG Camera 01

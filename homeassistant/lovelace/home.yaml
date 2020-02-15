@@ -4,7 +4,12 @@ path: home
 cards:
 
   - type: markdown
-    title: Welcome to Ich Project!
+    title: Smart Home
     content: >
-      Bosques Urbanos es un conjunto de 10 espacios naturales en los que la flora,
-      la fauna, la cultura y el deporte, se conjugan para brindar bienestar a la ciudadanía.
+      Smart home technology which may also be termed Home automation
+      is the use of devices in the home that connect via a network.
+      It uses devices such as sensors and other appliances connected
+      to the Internet of things (IoT) that can be remotely monitored,
+      controlled or accessed and provide services that respond to
+      the perceived needs of the users.
+      [Wikipedia](https://en.wikipedia.org/wiki/Smart_home_technology)

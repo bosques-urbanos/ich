@@ -5,5 +5,12 @@ resources: !include lovelace/resources.yaml
 views:
 
   - !include lovelace/home.yaml
-  - !include lovelace/server.yaml
+  - !include lovelace/frontyard.yaml
+  - !include lovelace/masterbedroom.yaml
+  - !include lovelace/bathroom.yaml
+  - !include lovelace/guestbedroom.yaml
+  - !include lovelace/kitchen.yaml
+  - !include lovelace/livingroom.yaml
+  - !include lovelace/backyard.yaml
   - !include lovelace/cameras.yaml
+  - !include lovelace/server.yaml

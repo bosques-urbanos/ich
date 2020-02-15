@@ -1,0 +1,12 @@
+title: Living Room
+icon: mdi:sofa
+path: livingroom
+cards:
+
+  - type: entities
+    title: Environment
+    show_header_toggle: false
+    entities:
+
+      - entity: sensor.living_room_temperature
+        name: Temperature

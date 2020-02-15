@@ -1,0 +1,12 @@
+title: Master Bedroom
+icon: mdi:bed-empty
+path: masterbedroom
+cards:
+
+  - type: entities
+    title: Environment
+    show_header_toggle: false
+    entities:
+
+      - entity: sensor.master_bedroom_temperature
+        name: Temperature

@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: Living Room Temperature
+state_topic: "smarthome/livingroom/temperature/state_topic"
+unit_of_measurement: '°C'

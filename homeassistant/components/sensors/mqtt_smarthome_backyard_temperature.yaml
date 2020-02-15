@@ -1,0 +1,6 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: Backyard Temperature
+state_topic: "smarthome/backyard/temperature/state_topic"
+unit_of_measurement: '°C'
