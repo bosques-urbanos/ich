@@ -12,3 +12,5 @@ cards:
         name: Temperature
       - entity: sensor.frontyard_humidity
         name: Humidity
+      - entity: sensor.frontyard_battery
+        name: Battery

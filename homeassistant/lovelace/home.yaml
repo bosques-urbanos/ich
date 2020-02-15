@@ -23,3 +23,5 @@ cards:
         name: Home Mean Temperature
       - entity: sensor.home_mean_humidity
         name: Home Mean Humidity
+      - entity: sensor.home_mean_battery
+        name: Home Mean Battery

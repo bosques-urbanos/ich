@@ -14,3 +14,5 @@ cards:
         name: Humidity
       - entity: sensor.backyard_mold_indicator
         name: Mold Indicator
+      - entity: sensor.backyard_battery
+        name: Battery

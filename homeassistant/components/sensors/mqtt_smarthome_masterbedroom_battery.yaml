@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/components/sensor.mqtt/
+
+platform: mqtt
+name: Master Bedroom Battery
+state_topic: "smarthome/masterbedroom/battery/state_topic"
+unit_of_measurement: '%'
+icon: mdi:battery-50
+device_class: battery
