@@ -1,0 +1,14 @@
+alias: 'Telegram Ich Project Bot Start'
+hide_entity: true
+trigger:
+  platform: event
+  event_type: telegram_command
+  event_data:
+    command: '/start'
+action:
+  - service: notify.telegram_ich_project_bot
+    data:
+      message: 'commands'
+      data:
+        keyboard:
+          - '/ping, /status, /medicine'

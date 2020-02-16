@@ -1,0 +1,15 @@
+alias: Telegram Ich Project Medicine
+trigger:
+  platform: event
+  event_type: telegram_command
+  event_data:
+    command: '/medicine'
+action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: '{{ trigger.event.data.user_id }}'
+      disable_notification: true
+      message: |
+               Last opened? *{{ states.binary_sensor.kitchen_medicine_cabinet.name }}*
+               Date: _{{ (as_timestamp(states.binary_sensor.kitchen_medicine_cabinet.last_updated.astimezone()) | timestamp_custom("%b %d %Y", true)) }}_
+               Time: _{{ (as_timestamp(states.binary_sensor.kitchen_medicine_cabinet.last_updated.astimezone()) | timestamp_custom("%H:%M:%S", true)) }}_

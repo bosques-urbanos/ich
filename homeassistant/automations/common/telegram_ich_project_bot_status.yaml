@@ -1,0 +1,21 @@
+alias: Telegram Ich Project Status
+trigger:
+  platform: event
+  event_type: telegram_command
+  event_data:
+    command: '/status'
+action:
+  - service: telegram_bot.send_message
+    data_template:
+      target: '{{ trigger.event.data.user_id }}'
+      disable_notification: true
+      message: |
+               Hi There!
+
+               Server was last rebooted {{ (as_timestamp(states.sensor.last_boot.state) | timestamp_custom("%b %d %Y", true)) }}.
+
+               Mean temperature inside home is {{ states.sensor.home_mean_temperature.state }}.
+               Frontyard temperature is {{ states.sensor.frontyard_temperature.state }}.
+
+               Group all lights state is {{ states.group.all_lights.state }}.
+               Group all locks state is {{ states.group.all_locks.state }}.
