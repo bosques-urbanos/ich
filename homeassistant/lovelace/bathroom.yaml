@@ -1,5 +1,5 @@
 title: Bathroom
-icon: mdi:paper-roll
+icon: mdi:shower
 path: bathroom
 cards:
 
@@ -12,6 +12,8 @@ cards:
         name: Motion
       - entity: binary_sensor.bathroom_door
         name: Door
+      - entity: binary_sensor.bathroom_toilet
+        name: Toilet
 
   - type: glance
     title: Devices
