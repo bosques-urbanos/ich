@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/light.mqtt/
+
+platform: mqtt
+name: Frontyard Light
+command_topic: "smarthome/frontyard/light"
+state_topic: "smarthome/frontyard/light"
+payload_on: "On"
+payload_off: "Off"

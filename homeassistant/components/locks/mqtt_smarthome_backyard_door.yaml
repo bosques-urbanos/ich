@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/lock.mqtt/
+
+platform: mqtt
+name: Backyard Door
+state_topic: "smarthome/backyard/door"
+command_topic: "smarthome/backyard/door"
+qos: 1
+retain: true

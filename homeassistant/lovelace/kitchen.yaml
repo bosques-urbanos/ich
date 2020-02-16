@@ -13,6 +13,17 @@ cards:
       - entity: binary_sensor.kitchen_medicine_cabinet
         name: Medicine Cabinet
 
+  - type: glance
+    title: Devices
+    show_header_toggle: false
+    show_state: true
+    entities:
+
+      - entity: light.kitchen_light
+        name: Light
+        tap_action:
+          action: toggle
+
   - type: entities
     title: Environment
     show_header_toggle: false

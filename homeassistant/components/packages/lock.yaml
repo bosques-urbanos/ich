@@ -1,0 +1,3 @@
+# https://www.home-assistant.io/integrations/lock
+
+lock: !include_dir_list ../locks/

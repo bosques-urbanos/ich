@@ -13,6 +13,17 @@ cards:
       - entity: binary_sensor.bathroom_door
         name: Door
 
+  - type: glance
+    title: Devices
+    show_header_toggle: false
+    show_state: true
+    entities:
+
+      - entity: light.bathroom_light
+        name: Light
+        tap_action:
+          action: toggle
+
   - type: entities
     title: Environment
     show_header_toggle: false

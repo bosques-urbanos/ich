@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/light.mqtt/
+
+platform: mqtt
+name: Guest Bedroom Light Lamp
+command_topic: "smarthome/guestbedroom/light/lamp"
+state_topic: "smarthome/guestbedroom/light/lamp"
+payload_on: "On"
+payload_off: "Off"

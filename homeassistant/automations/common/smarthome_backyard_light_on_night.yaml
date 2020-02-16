@@ -1,0 +1,21 @@
+alias: Backyard Light On Night
+initial_state: 'true'
+trigger:
+  platform: state
+  entity_id: binary_sensor.backyard_motion
+  to: 'on'
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: light.backyard_light
+      state: 'off'
+    - condition: or
+      conditions:
+        - condition: sun
+          before: sunrise
+        - condition: sun
+          after: sunset
+action:
+  service: light.turn_on
+  entity_id: light.backyard_light

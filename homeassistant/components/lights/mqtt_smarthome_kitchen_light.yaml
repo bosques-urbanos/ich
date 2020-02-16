@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/light.mqtt/
+
+platform: mqtt
+name: Kitchen Light
+command_topic: "smarthome/kitchen/light"
+state_topic: "smarthome/kitchen/light"
+payload_on: "On"
+payload_off: "Off"

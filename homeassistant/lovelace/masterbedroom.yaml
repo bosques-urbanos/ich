@@ -13,6 +13,21 @@ cards:
       - entity: binary_sensor.master_bedroom_door
         name: Door
 
+  - type: glance
+    title: Devices
+    show_header_toggle: false
+    show_state: true
+    entities:
+
+      - entity: light.master_bedroom_light_principal
+        name: Light Principal
+        tap_action:
+          action: toggle
+      - entity: light.master_bedroom_light_lamp     
+        name: Light Lamp     
+        tap_action:
+          action: toggle
+
   - type: entities
     title: Environment
     show_header_toggle: false

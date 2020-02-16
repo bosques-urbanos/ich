@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/light.mqtt/
+
+platform: mqtt
+name: Bathroom Light
+command_topic: "smarthome/bathroom/light"
+state_topic: "smarthome/bathroom/light"
+payload_on: "On"
+payload_off: "Off"

@@ -1,0 +1,8 @@
+# https://www.home-assistant.io/integrations/light.mqtt/
+
+platform: mqtt
+name: Master Bedroom Light Lamp
+command_topic: "smarthome/masterbedroom/light/lamp"
+state_topic: "smarthome/masterbedroom/light/lamp"
+payload_on: "On"
+payload_off: "Off"
