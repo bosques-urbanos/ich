@@ -13,7 +13,7 @@ WORKDIR /
 
 RUN apt-get update && \
     apt-get install -y \
-    sudo wget unzip nano software-properties-common \
+    sudo wget unzip nano vim software-properties-common \
     build-essential checkinstall cmake pkg-config git gfortran \
     libjpeg-dev libjpeg8-dev libtiff5-dev libpng-dev \
     libgtk-3-dev libtbb2 libtbb-dev libcanberra-gtk-module \
@@ -60,9 +60,9 @@ RUN  cmake \
     -D INSTALL_PYTHON_EXAMPLES=OFF \
     -D INSTALL_C_EXAMPLES=OFF \
     -D OPENCV_EXTRA_MODULES_PATH=/opencv_contrib-$OPENCV_VERSION/modules \
-    -D PYTHON3_EXECUTABLE=/usr/bin/python3.5 \
-    -D PYTHON_INCLUDE_DIR=/usr/include/python3.5 \
-    -D PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so \
+    -D PYTHON3_EXECUTABLE=/usr/bin/python3.6 \
+    -D PYTHON_INCLUDE_DIR=/usr/include/python3.6 \
+    -D PYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.6m.so \
     -D BUILD_EXAMPLES=YES \
     -D BUILD_NEW_PYTHON_SUPPORT=YES \
     -D WITH_LIBV4L=YES \
