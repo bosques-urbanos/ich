@@ -50,3 +50,15 @@ cards:
 
       - entity: switch.application_parking_lot_counter_cpp
         name: Switch
+
+      - type: section
+        label: Object Size Detector CPP
+
+      - entity: switch.application_object_size_detector_cpp
+        name: Switch
+
+      - type: section
+        label: Safety Gear Detector CPP
+
+      - entity: switch.application_safety_gear_detector_cpp
+        name: Switch
