@@ -2,7 +2,7 @@
 
 # General Packages
 sudo apt-get update
-sudo apt-get install influxdb-client mosquitto-clients ffmpeg
+sudo apt-get install influxdb-client mosquitto-clients ffmpeg make 
 
 # Docker
 # Tbd
