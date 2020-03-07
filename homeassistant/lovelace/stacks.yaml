@@ -1,0 +1,29 @@
+title: Stacks
+icon: mdi:linux
+path: stacks
+cards:
+
+  - type: markdown
+    title: Stacks
+    content: >
+      Quickly get up and running on Clear Linux OS with images tailored,
+      optimized, and tested together for specific use cases.
+
+  - type: entities
+    title: Deep Learning Reference Stack
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: DLRS Restricted Zone Notifier Python
+
+      - entity: switch.application_dlrs_restricted_zone_notifier_python
+        name: Switch
+      - entity: binary_sensor.application_dlrs_restricted_zone_notifier_python
+        name: Sensor
+
+      - type: section
+        label: DLRS Face Recognition Demo Python
+
+      - entity: switch.application_dlrs_face_recognition_demo_python
+        name: Switch
