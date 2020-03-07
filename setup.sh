@@ -30,8 +30,10 @@ docker-compose build
 cd ~/ich/iikim/openvino
 make demo-cpu
 
-# InfluxDB Database
+# Stacks
+docker pull clearlinux/stacks-dlrs_2-mkl
 
+# InfluxDB Database
 cd ~/ich
 docker-compose up -d influxdb
 sleep 5
