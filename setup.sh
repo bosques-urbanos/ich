@@ -32,6 +32,8 @@ make demo-cpu
 
 # Stacks
 docker pull clearlinux/stacks-dlrs_2-mkl
+cd ~/ich/iikim/stacks/dlrs
+make demo-cpu
 
 # InfluxDB Database
 cd ~/ich
