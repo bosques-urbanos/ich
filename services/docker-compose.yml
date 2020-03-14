@@ -45,6 +45,18 @@ services:
     devices:
       - /dev
 
+  openvino-2019r3:
+    build:
+      context: ./openvino-2019r3/
+      dockerfile: Dockerfile.openvino-2019r3
+    image: xe1gyq/openvino-2019r3
+    container_name: ich-openvino-2019r3
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    devices:
+      - /dev
+
   filehash:
     build:
       context: ./filehash/
