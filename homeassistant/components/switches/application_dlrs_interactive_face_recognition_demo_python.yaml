@@ -1,0 +1,6 @@
+platform: rest
+resource: !secret application_dlrs_interactive_face_recognition_demo_python
+name: Application DLRS Interactive Face Recognition Demo Python
+body_on: '{"state": "start"}'
+body_off: '{"state": "stop"}'
+is_on_template: '{{ value_json is not none and value_json.state == "running" }}'

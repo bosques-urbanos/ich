@@ -23,7 +23,7 @@ cards:
         name: Sensor
 
       - type: section
-        label: DLRS Face Recognition Demo Python
+        label: DLRS Interactive Face Recognition Demo Python
 
-      - entity: switch.application_dlrs_face_recognition_demo_python
+      - entity: switch.application_dlrs_interactive_face_recognition_demo_python
         name: Switch

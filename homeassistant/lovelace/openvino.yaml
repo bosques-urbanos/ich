@@ -46,6 +46,12 @@ cards:
         name: Switch
 
       - type: section
+        label: Interactive Face Recognition Demo Python
+
+      - entity: switch.application_interactive_face_recognition_demo_python
+        name: Switch
+
+      - type: section
         label: Parking Lot Counter CPP
 
       - entity: switch.application_parking_lot_counter_cpp
