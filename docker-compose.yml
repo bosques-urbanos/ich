@@ -169,6 +169,16 @@ services:
     ports:
       - 8080:8080
 
+  telegraf:
+    image: telegraf:latest
+    container_name: ich-telegraf
+    restart: always
+    network_mode: host
+    depends_on:
+      - "influxdb"
+    volumes:
+      - ./config/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+
 volumes:
   mosquitto-storage:
   influxdb-storage:
