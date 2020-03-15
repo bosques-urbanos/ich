@@ -9,7 +9,28 @@ cards:
       Develop Multiplatform Computer Vision Solutions
 
   - type: entities
-    title: OpenVINO
+    title: Python
+    show_header_toggle: false
+    entities:
+
+      - type: section
+        label: Restricted Zone Notifier Python
+
+      - entity: switch.application_restricted_zone_notifier_python
+        name: Switch
+      - entity: binary_sensor.application_restricted_zone_notifier_python
+        name: Sensor
+
+      - type: section
+        label: Non Metrics
+
+      - entity: switch.application_interactive_face_recognition_demo_python
+        name: Interactive Face Recognition Demo Python
+      - entity: switch.application_multicamera_multiperson_demo_python
+        name: Multi Camera Multi Person Demo Python
+
+  - type: entities
+    title: C++
     show_header_toggle: false
     entities:
 
@@ -19,14 +40,6 @@ cards:
       - entity: switch.application_restricted_zone_notifier_cpp
         name: Switch
       - entity: binary_sensor.application_restricted_zone_notifier_cpp
-        name: Sensor
-
-      - type: section
-        label: Restricted Zone Notifier Python
-
-      - entity: switch.application_restricted_zone_notifier_python
-        name: Switch
-      - entity: binary_sensor.application_restricted_zone_notifier_python
         name: Sensor
 
       - type: section
@@ -40,31 +53,13 @@ cards:
         name: Lookers
 
       - type: section
-        label: Shopper Mood Monitor CPP
+        label: Non Metrics
 
       - entity: switch.application_shopper_mood_monitor_cpp
-        name: Switch
-
-      - type: section
-        label: Interactive Face Recognition Demo Python
-
-      - entity: switch.application_interactive_face_recognition_demo_python
-        name: Switch
-
-      - type: section
-        label: Parking Lot Counter CPP
-
+        name: Shopper Mood Monitor CPP
       - entity: switch.application_parking_lot_counter_cpp
-        name: Switch
-
-      - type: section
-        label: Object Size Detector CPP
-
+        name: Parking Lot Counter CPP
       - entity: switch.application_object_size_detector_cpp
-        name: Switch
-
-      - type: section
-        label: Safety Gear Detector CPP
-
+        name: Object Size Detector CPP
       - entity: switch.application_safety_gear_detector_cpp
-        name: Switch
+        name: Safety Gear Detector CPP

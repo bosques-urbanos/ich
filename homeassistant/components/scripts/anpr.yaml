@@ -1,0 +1,14 @@
+# https://www.home-assistant.io/components/script/
+
+ANPR:
+  sequence:
+    - service: camera.snapshot
+      data:
+        entity_id: camera.mjpeg_camera_02
+        filename: '/config/www/media/camera-02/snapshot.jpg'
+    - service: shell_command.openfaas_rgb2wb
+    - delay: '00:00:01'
+    - service: camera.local_file_update_file_path
+      data:
+        entity_id: camera.local_file_camera_02_openfaas
+        file_path: '/config/www/media/camera-02/openfaas.jpg'
