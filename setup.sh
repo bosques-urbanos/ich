@@ -40,7 +40,9 @@ cd ~/ich
 docker-compose up -d influxdb
 sleep 5
 influx -execute 'CREATE DATABASE home_assistant'
+influx -execute 'CREATE DATABASE telegraf'
 # curl -XPOST 'http://172.17.0.1:8086/query' --data-urlencode 'q=CREATE DATABASE home_assistant'
+# curl -XPOST 'http://172.17.0.1:8086/query' --data-urlencode 'q=CREATE DATABASE telegraf'
 
 # Home Assistant Secrets File Configuration
 cp config/homeassistant/secrets.yaml homeassistant/
