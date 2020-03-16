@@ -15,7 +15,7 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 17,
+  "id": null,
   "links": [],
   "panels": [
     {
@@ -1045,5 +1045,5 @@
   "variables": {
     "list": []
   },
-  "version": 28
+  "version": 1
 }
