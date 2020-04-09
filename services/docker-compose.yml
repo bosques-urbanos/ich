@@ -71,3 +71,15 @@ services:
       - /dev
     volumes:
       - ../media/:/media/
+
+  jupyter:
+    build:
+      context: ./jupyter/
+      dockerfile: Dockerfile.jupyter
+    image: xe1gyq/jupyter
+    container_name: ich-jupyter
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    devices:
+      - /dev
