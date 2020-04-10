@@ -53,7 +53,7 @@ RUN cd $OPENVINO_INSTALL/install_dependencies/ && \
     sudo -E ./install_openvino_dependencies.sh
 
 RUN echo "source $OPENVINO_INSTALL/bin/setupvars.sh" >> /home/jovyan/.bashrc && \
-    /bin/bash -c "source /home/user/.bashrc" &
+    /bin/bash -c "source /home/jovyan/.bashrc" &
 
 RUN cd $OPENVINO_INSTALL/deployment_tools/model_optimizer/install_prerequisites && \
     sudo ./install_prerequisites.sh
@@ -62,6 +62,25 @@ RUN cd $OPENVINO_INSTALL/install_dependencies/ && \
     sudo -E ./install_NEO_OCL_driver.sh
 
 RUN sudo apt autoremove -y && \
-    sudo rm -rf /home/user/${OPENVINO} /var/lib/apt/lists/*
+    sudo rm -rf /home/user/${OPENVINO} /var/lib/apt/lists/ && \
+    sudo echo "jovyan ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 USER jovyan
+WORKDIR /home/jovyan
+
+RUN pip install opencv-python && \
+    mkdir /home/jovyan/images/ && \
+    wget -O /home/jovyan/images/image.jpg https://cdn.cnn.com/cnnnext/dam/assets/170305143551-trump-obama-split-large-169.jpg
+
+RUN cd /opt/intel/openvino/deployment_tools/tools/model_downloader && \
+    python3 downloader.py --name squeezenet1.1 -o ~/ && \
+    cd /opt/intel/openvino/deployment_tools/model_optimizer/ && \
+    pip install -r requirements_caffe.txt && \
+    pip install coverage m2r pyenchant pylint Sphinx safety test-generator && \ 
+    ./mo_caffe.py \
+      --data_type=FP32 \
+      --input_model=/home/jovyan/public/squeezenet1.1/squeezenet1.1.caffemodel \
+      --output_dir=/home/jovyan/
+
+RUN /bin/bash -c "$OPENVINO_INSTALL/bin/setupvars.sh"
+RUN echo "$OPENVINO_INSTALL/bin/setupvars.sh -pyver 3.7" >> /home/jovyan/.bashrc
