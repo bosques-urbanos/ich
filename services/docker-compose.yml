@@ -83,3 +83,12 @@ services:
     network_mode: host
     devices:
       - /dev
+
+  deepstack:
+    image: deepquestai/deepstack
+    container_name: ich-deepstack
+    environment:
+      - TZ=America/Mexico_City
+    network_mode: host
+    devices:
+      - /dev
