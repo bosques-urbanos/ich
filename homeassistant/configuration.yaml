@@ -31,8 +31,13 @@ homeassistant:
     - '/config/www/media/camera-01/'
     - '/config/www/media/camera-02/'
 
+  # Customizing entities
+  customize: !include_dir_merge_named components/customize/
+
   # Load packages
   packages: !include_dir_named components/packages
 
-hacs:
-  token: !secret hacs_token
+  #hacs:
+  #token: !secret hacs_token
+  #sidepanel_title: true
+  #sidepanel_icon: true

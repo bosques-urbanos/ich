@@ -1,5 +1,0 @@
-# https://www.portainer.io/
-
-motioneye:
-  title: 'MotionEye'
-  url: !secret services_motioneye_url

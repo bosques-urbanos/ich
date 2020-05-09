@@ -1,5 +1,0 @@
-# https://nodered.org/
-
-nodered_dashboard:
-  title: 'Node-RED Dashboard'
-  url: !secret services_nodered_dashboard_url

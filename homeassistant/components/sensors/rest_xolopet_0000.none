@@ -1,0 +1,8 @@
+platform: rest
+name: Xolopet 0000
+json_attributes:
+  - connected
+  - distance
+resource: !secret xolopet_0000_url
+value_template: '{{ value_json.id }}'
+scan_interval: 86400

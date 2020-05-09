@@ -1,0 +1,10 @@
+# https://www.home-assistant.io/components/template
+
+platform: template
+sensors:
+  xolopet_0000_connected:
+    friendly_name: 'Xolopet 0000 Connected'
+    value_template: '{{ states.sensor.xolopet_0000.attributes["connected"] }}'
+  xolopet_0000_distance:
+    friendly_name: 'Xolopet 0000 Distance'
+    value_template: '{{ states.sensor.xolopet_0000.attributes["distance"] }}'

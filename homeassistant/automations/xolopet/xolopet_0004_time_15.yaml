@@ -1,0 +1,22 @@
+alias: Xolopet 0004 Time 15
+initial_state: 'true'
+trigger:
+  - platform: time
+    at: '09:00:00'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0004_percentage
+    below: 15
+action:
+  - service: notify.mobile_app_iphone_de_gerardo
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.to_state.state }}
+  - service: notify.mobile_app_vtr_l09
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.to_state.state }}
+  - service: notify.mobile_app_moto_g_5_plus
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} {{ trigger.to_state.state }}

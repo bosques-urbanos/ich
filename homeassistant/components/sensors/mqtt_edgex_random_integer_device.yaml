@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/components/sensor.mqtt/
-
-platform: mqtt
-name: MQTT Random Integer Device
-state_topic: "EdgeXExportTopic/RandomIntegerDevice"
-value_template: "{{ value_json.readings.0.value }}"

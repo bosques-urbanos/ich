@@ -3,132 +3,48 @@ icon: mdi:server
 path: server
 cards:
 
-  - type: picture-elements
-    image: /local/pictures/ui-lovelace/2018072201.jpg
-    elements:
-
-      - type: state-icon
-        entity: sensor.glances_cpu_load
-        style:
-          top: 90%
-          left: 5%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_cpu_temp
-        style:
-          top: 90%
-          left: 15%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_ram_used_percent
-        style:
-          top: 90%
-          left: 25%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_disk_used_percent
-        style:
-          top: 90%
-          left: 35%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_containers_active
-        style:
-          top: 90%
-          left: 75%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_containers_cpu_used
-        style:
-          top: 90%
-          left: 85%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_containers_ram_used
-        style:
-          top: 90%
-          left: 95%
-          "--paper-item-icon-color": white
-
-  - type: custom:mini-graph-card
-    name: Processor Usage
-    align_state: center
-    icon: mdi:speedometer
-    show:
-      extrema: true
-      labels: true
-      points: true
-    entities:
-      - entity: sensor.processor_use
-        name: All System
-        color: black
-      - entity: sensor.glances_containers_cpu_used
-        name: Only Containers
-        color: grey
-    hours_to_show: 168
-    points_per_hour: 0.05
-
-  - type: custom:mini-graph-card
-    name: Memory Disk Usage
-    align_state: center
-    icon: mdi:speedometer
-    show:
-      extrema: true
-      labels: true
-      points: true
-    entities:
-      - entity: sensor.glances_ram_used_percent
-        name: Memory
-        color: black
-      - entity: sensor.glances_disk_used_percent
-        name: Disk
-        color: grey
-    hours_to_show: 168
-    points_per_hour: 0.05
-
-  - type: custom:mini-graph-card
-    name: Download Upload Speed
-    align_state: center
-    icon: mdi:speedometer
-    show:
-      extrema: true
-      labels: true
-      points: true
-    entities:
-      - entity: sensor.speedtest_download
-        name: Download
-        color: black
-      - entity: sensor.speedtest_upload
-        name: Upload
-        color: grey
-    hours_to_show: 168
-    points_per_hour: 0.05
-
   - type: entities
     title: System
     show_header_toggle: false
     entities:
+      - sensor.processor_use
       - sensor.memory_free
-      - sensor.disk_free_home
       - sensor.last_boot
+
+  - type: entities
+    title: Glances
+    show_header_toggle: false
+    entities:
+      - sensor.glances_cpu_load
+      - sensor.glances_cpu_used
+      - sensor.glances_ram_used_percent
 
   - type: entities
     title: Containers
     show_header_toggle: false
     entities:
       - sensor.glances_containers_active
+      - sensor.glances_containers_cpu_used
       - sensor.glances_containers_ram_used
+
+  - type: entities
+    title: Disk
+    show_header_toggle: false
+    entities:
+      - sensor.glances_etc_hostname_free
+      - sensor.glances_etc_hosts_free
+
+  - type: entities
+    title: Internet Speed
+    show_header_toggle: false
+    entities:
+      - sensor.speedtest_download
+      - sensor.speedtest_upload
 
   - type: entities
     title: Network
     show_header_toggle: false
     entities:
-      - binary_sensor.ping_binary_sensor_google
+      - binary_sensor.ping_google_public_dns
       - binary_sensor.ping_binary_sensor_camera_01
       - binary_sensor.ping_binary_sensor_camera_02

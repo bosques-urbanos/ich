@@ -1,9 +1,0 @@
-# https://www.home-assistant.io/integrations/binary_sensor.mqtt/
-
-platform: mqtt
-name: Application MeRS Face Detection and Classification Publish MQTT Female
-state_topic: "application/mfdacpm/demo"
-value_template: '{{ value_json.objects[0].gender.label }}'
-payload_on: "Female"
-payload_off: "Male"
-force_update: true

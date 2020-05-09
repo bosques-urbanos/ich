@@ -1,0 +1,37 @@
+alias: Xolopet 15
+initial_state: 'true'
+trigger:
+  - platform: time
+    at: '09:00:00'
+condition:
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0000_percentage
+    below: 15
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0001_percentage
+    below: 15
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0002_percentage
+    below: 15
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0003_percentage
+    below: 15
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0004_percentage
+    below: 15
+  - condition: numeric_state
+    entity_id: sensor.xolopet_0005_percentage
+    below: 15
+action:
+  - service: notify.mobile_app_iphone_de_gerardo
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} 15%
+  - service: notify.mobile_app_vtr_l09
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} 15%
+  - service: notify.mobile_app_moto_g_5_plus
+    data_template:
+      message: >
+        {{ trigger.to_state.name }} 15%

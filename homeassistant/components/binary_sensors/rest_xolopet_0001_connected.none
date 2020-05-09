@@ -1,0 +1,9 @@
+# https://www.home-assistant.io/integrations/binary_sensor.rest/
+
+platform: rest
+name: Xolopet 0001 Connected
+resource: !secret xolopet_0001_url
+method: GET
+value_template: '{{ value_json.connected }}'
+device_class: connectivity
+scan_interval: 86400

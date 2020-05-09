@@ -4,3 +4,5 @@ influxdb:
   host: localhost
   port: 8086
   database: home_assistant
+  username: !secret influxdb_username
+  password: !secret influxdb_password

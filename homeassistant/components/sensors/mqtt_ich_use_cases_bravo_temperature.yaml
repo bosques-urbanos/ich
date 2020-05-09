@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/components/sensor.mqtt/
-
-platform: mqtt
-name: MQTT Ich Use Cases Bravo Temperature
-state_topic: "IchUseCases/Bravo/Temperature"
-unit_of_measurement: '°C'

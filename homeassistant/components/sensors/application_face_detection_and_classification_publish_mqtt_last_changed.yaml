@@ -1,8 +1,0 @@
-# https://www.home-assistant.io/components/template
-
-platform: template
-sensors:
-  application_face_detection_and_classification_publish_mqtt_timestamp_last_changed:
-    friendly_name: Application Face Detection and Classification Publish MQTT Timestamp Last Changed
-    value_template:
-      '{{ relative_time(states.sensor.application_face_detection_and_classification_publish_mqtt_timestamp.last_changed) }}'

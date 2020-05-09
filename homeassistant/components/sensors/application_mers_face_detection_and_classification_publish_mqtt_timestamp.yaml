@@ -1,6 +1,0 @@
-# https://www.home-assistant.io/components/sensor.mqtt/
-
-platform: mqtt
-name: Application MeRS Face Detection and Classification Publish MQTT Timestamp
-state_topic: "application/mfdacpm/demo"
-value_template: '{{ value_json.timestamp }}'
