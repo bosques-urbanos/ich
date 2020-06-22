@@ -7,14 +7,14 @@ services:
       dockerfile: Dockerfile.mjpeg-streamer
       args:
         - VIDEO_DEVICE=${VIDEO_DEVICE:-/dev/video0}
-        - SERVER_TCP_PORT=${SERVER_TCP_PORT:-8080}
+        - SERVER_TCP_PORT=${SERVER_TCP_PORT:-9081}
     image: xe1gyq/mjpeg-streamer
     container_name: ich-mjpeg-streamer
     privileged: true
     environment:
       - TZ=America/Mexico_City
       - VIDEO_DEVICE=${VIDEO_DEVICE:-/dev/video0}
-      - SERVER_TCP_PORT=${SERVER_TCP_PORT:-8080}
+      - SERVER_TCP_PORT=${SERVER_TCP_PORT:-9081}
     network_mode: host
     ports:
       - 8080:8080
