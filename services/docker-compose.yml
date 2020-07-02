@@ -9,7 +9,7 @@ services:
         - VIDEO_DEVICE=${VIDEO_DEVICE:-/dev/video0}
         - SERVER_TCP_PORT=${SERVER_TCP_PORT:-9081}
     image: xe1gyq/mjpeg-streamer
-    container_name: ich-mjpeg-streamer
+    container_name: services-mjpeg-streamer
     privileged: true
     environment:
       - TZ=America/Mexico_City
@@ -26,7 +26,7 @@ services:
       context: ./opencv/
       dockerfile: Dockerfile.opencv
     image: xe1gyq/opencv
-    container_name: ich-opencv
+    container_name: services-opencv
     environment:
       - TZ=America/Mexico_City
     network_mode: host
@@ -38,7 +38,7 @@ services:
       context: ./openvino/
       dockerfile: Dockerfile.openvino
     image: xe1gyq/openvino
-    container_name: ich-openvino
+    container_name: services-openvino
     environment:
       - TZ=America/Mexico_City
     network_mode: host
@@ -50,7 +50,7 @@ services:
       context: ./openvino-official/
       dockerfile: Dockerfile.openvino-official
     image: xe1gyq/openvino-official
-    container_name: ich-openvino-official
+    container_name: services-openvino-official
     environment:
       - TZ=America/Mexico_City
     network_mode: host
@@ -62,7 +62,7 @@ services:
       context: ./filehash/
       dockerfile: Dockerfile.filehash
     image: xe1gyq/filehash
-    container_name: ich-filehash
+    container_name: services-filehash
     privileged: true
     environment:
       - TZ=America/Mexico_City
@@ -77,18 +77,46 @@ services:
       context: ./jupyter/
       dockerfile: Dockerfile.jupyter
     image: xe1gyq/jupyter
-    container_name: ich-jupyter
+    container_name: services-jupyter
     environment:
       - TZ=America/Mexico_City
     network_mode: host
     devices:
       - /dev
 
+  doods:
+    image: snowzach/doods
+    container_name: services-doods
+    restart: always
+    network_mode: host
+    ports:
+      - 8080:8080
+
   deepstack:
     image: deepquestai/deepstack
-    container_name: ich-deepstack
+    container_name: oochelbeh-deepstack
+    restart: always
+    ports:
+      - 5000:5000
     environment:
-      - TZ=America/Mexico_City
-    network_mode: host
-    devices:
-      - /dev
+      - API-KEY=${DEEPSTACK_API_KEY}
+      - MODE=${DEEPSTACK_MODE:-High}
+      - VISION-DETECTION=${DEEPSTACK_VISION_DETECTION:-True}
+      - VISION-FACE=${DEEPSTACK_VISION_FACE:-False}
+      - DEEPSTACK_DATASTORE=${DEEPSTACK_DATASTORE:-`pwd`/media/deepstack/datastore/}
+    volumes:
+      - $PWD/media/deepstack/datastore/:/datastore
+
+  objectbox:
+    image: machinebox/objectbox
+    container_name: oochelbeh-objectbox
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - MB_KEY=${MB_KEY}
+      - MB_PORT=${MB_PORT:-8080}
+      - MB_OBJECTBOX_ANNOTATION_TOOL=${MB_OBJECTBOX_ANNOTATION_TOOL:-False}
+      - MB_OBJECTBOX_BOXDATA=${MB_OBJECTBOX_BOXDATA:-`pwd`/media/machinebox/boxdata}
+    volumes:
+      - $PWD/media/machinebox/boxdat:/boxdata
