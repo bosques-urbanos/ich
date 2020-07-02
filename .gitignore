@@ -25,3 +25,6 @@ homeassistant/www/
 
 # Iikim
 iikim/
+
+# Services
+services/
