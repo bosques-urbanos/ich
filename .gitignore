@@ -26,5 +26,8 @@ homeassistant/www/
 # Iikim
 iikim/
 
+# Lak
+lak/
+
 # Services
 services/
