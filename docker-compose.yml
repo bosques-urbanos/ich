@@ -77,47 +77,6 @@ services:
     volumes:
       - influxdb-storage:/var/lib/influxdb
 
-  grafana:
-    image: grafana/grafana
-    container_name: ich-grafana
-    restart: on-failure
-    depends_on:
-      - "influxdb"
-    environment:
-      - TZ=America/Mexico_City
-      - GF_INSTALL_PLUGINS=grafana-clock-panel,briangann-gauge-panel,natel-plotly-panel,grafana-simple-json-datasource,yesoreyeram-boomtable-panel
-      - GF_RENDERING_SERVER_URL=http://renderer:8081/render
-      - GF_RENDERING_CALLBACK_URL=http://grafana:3000/
-      - GF_LOG_FILTERS=rendering:debug
-    network_mode: host
-    ports:
-      - 3000:3000
-    volumes:
-      - grafana-storage:/var/lib/grafana
-      - ./config/grafana/provisioning/:/etc/grafana/provisioning/
-      - ./config/grafana/dashboards/:/var/lib/grafana/dashboards/:rw
-
-  renderer:
-    image: grafana/grafana-image-renderer:latest
-    container_name: ich-image-renderer
-    restart: on-failure
-    network_mode: host
-    ports:
-      - 8081
-
-  portainer:
-    image: portainer/portainer
-    container_name: ich-portainer
-    restart: on-failure
-    environment:
-      - TZ=America/Mexico_City
-    network_mode: host
-    ports:
-      - 9000:9000
-    volumes:
-      - portainer-storage:/data:rw
-      - /var/run/docker.sock:/var/run/docker.sock
-
   nodered:
     build:
       context: ./config/nodered/
@@ -174,24 +133,6 @@ services:
       - ./config/ha-dockermon/:/config
     ports:
       - 8126:8126
-
-  doods:
-    image: snowzach/doods
-    container_name: ich-doods
-    restart: always
-    network_mode: host
-    ports:
-      - 8080:8080
-
-  telegraf:
-    image: telegraf:latest
-    container_name: ich-telegraf
-    restart: always
-    network_mode: host
-    depends_on:
-      - "influxdb"
-    volumes:
-      - ./config/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
 
 volumes:
   mosquitto-storage:
