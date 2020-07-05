@@ -44,7 +44,6 @@ services:
       - "influxdb"
       - "mosquitto"
       - "glances"
-      - "doods"
     environment:
       - TZ=America/Mexico_City
       - DISPLAY=:0
