@@ -1,5 +1,0 @@
-platform: mqtt
-name: Xolopet 0001 Percentage
-state_topic: "xoloTopic/0001"
-value_template: "{{ value_json.percentage }}"
-force_update: true

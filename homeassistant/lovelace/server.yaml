@@ -4,7 +4,7 @@ path: server
 cards:
 
   - type: entities
-    title: System
+    title: Sistema
     show_header_toggle: false
     entities:
       - sensor.processor_use
@@ -20,7 +20,7 @@ cards:
       - sensor.glances_ram_used_percent
 
   - type: entities
-    title: Containers
+    title: Contenedores
     show_header_toggle: false
     entities:
       - sensor.glances_containers_active
@@ -28,21 +28,21 @@ cards:
       - sensor.glances_containers_ram_used
 
   - type: entities
-    title: Disk
+    title: Disco
     show_header_toggle: false
     entities:
       - sensor.glances_etc_hostname_free
       - sensor.glances_etc_hosts_free
 
   - type: entities
-    title: Internet Speed
+    title: Internet
     show_header_toggle: false
     entities:
       - sensor.speedtest_download
       - sensor.speedtest_upload
 
   - type: entities
-    title: Network
+    title: Red
     show_header_toggle: false
     entities:
       - binary_sensor.ping_google_public_dns

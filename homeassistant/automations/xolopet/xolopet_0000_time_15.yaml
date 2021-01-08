@@ -5,7 +5,7 @@ trigger:
     at: '09:00:00'
 condition:
   - condition: numeric_state
-    entity_id: sensor.xolopet_0000_percentage
+    entity_id: sensor.xolopet_0000_distance
     below: 15
 action:
   - service: notify.mobile_app_iphone_de_gerardo

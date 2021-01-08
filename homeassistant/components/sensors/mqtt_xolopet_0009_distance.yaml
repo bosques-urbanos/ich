@@ -1,0 +1,5 @@
+platform: mqtt
+name: Xolopet 0009 Distance
+state_topic: xoloTopic/0009
+value_template: "{{ value_json.distance }}"
+force_update: true

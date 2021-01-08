@@ -4,31 +4,24 @@ path: home
 cards:
 
   - type: markdown
-    title: Welcome to Xolopet Project!
+    title: Proyecto Xolopet
     content: >
       Xolopet es una empresa que se dedica a complacer las necesidades
       de un integrante vital de tu familia, tu mascota, sabemos lo que
       les gusta.
 
   - type: entities
-    title: Devices
+    title: Dispositivos Distancia
     show_header_toggle: false
     entities:
-      - entity: sensor.xolopet_0000_percentage
-      - entity: sensor.xolopet_0001_percentage
-      - entity: sensor.xolopet_0002_percentage
-      - entity: sensor.xolopet_0003_percentage
-      - entity: sensor.xolopet_0004_percentage
-      - entity: sensor.xolopet_0005_percentage
-
-#  - type: custom:auto-entities
-#    card:
-#      type: entities
-#    filter:
-#      include:
-#        - domain: binary_sensor
-#          attributes:
-#            device_class: motion
-#    sort:
-#      method: last_changed
-#      count: 5
+      - entity: sensor.xolopet_0000_distance
+      - entity: sensor.xolopet_0001_distance
+      - entity: sensor.xolopet_0002_distance
+      - entity: sensor.xolopet_0003_distance
+      - entity: sensor.xolopet_0004_distance
+      - entity: sensor.xolopet_0005_distance
+      - entity: sensor.xolopet_0006_distance
+      - entity: sensor.xolopet_0007_distance
+      - entity: sensor.xolopet_0008_distance
+      - entity: sensor.xolopet_0009_distance
+      - entity: sensor.xolopet_0010_distance

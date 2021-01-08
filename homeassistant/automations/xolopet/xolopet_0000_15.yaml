@@ -2,7 +2,7 @@ alias: Xolopet 0000 15
 initial_state: 'true'
 trigger:
   - platform: numeric_state
-    entity_id: sensor.xolopet_0000_percentage
+    entity_id: sensor.xolopet_0000_distance
     below: 15
     for:
       hours: 0
