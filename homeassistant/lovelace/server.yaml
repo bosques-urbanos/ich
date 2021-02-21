@@ -15,24 +15,10 @@ cards:
           "--paper-item-icon-color": white
 
       - type: state-icon
-        entity: sensor.glances_cpu_temp
-        style:
-          top: 90%
-          left: 15%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
         entity: sensor.glances_ram_used_percent
         style:
           top: 90%
-          left: 25%
-          "--paper-item-icon-color": white
-
-      - type: state-icon
-        entity: sensor.glances_disk_used_percent
-        style:
-          top: 90%
-          left: 35%
+          left: 15%
           "--paper-item-icon-color": white
 
       - type: state-icon
